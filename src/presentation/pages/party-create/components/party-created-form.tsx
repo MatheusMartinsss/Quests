@@ -10,7 +10,7 @@ const PartyCreatedForm: React.FC<props> = ({ data }: props) => {
     return (
         <Grid container spacing={2} padding={5} maxWidth='600px'>
             <Grid item xs={12} md={12}>
-                <TextField value={data.name} fullWidth  label='Nome da sala'> </TextField>
+                <TextField value={data.name} fullWidth label='Nome da sala'> </TextField>
             </Grid>
             <Grid item xs={12} md={12}>
                 <TextField value={data.codigo} fullWidth label='Codigo da sala'> </TextField>
@@ -31,6 +31,11 @@ const PartyCreatedForm: React.FC<props> = ({ data }: props) => {
                 <Button color='primary' fullWidth variant='contained'>
                     Ir para a sala
                     <ExitToAppIcon />
+                </Button>
+            </Grid>
+            <Grid item xs={12} md={12}>
+                <Button color='error' fullWidth variant='contained'>
+                    Cancelar
                 </Button>
             </Grid>
         </Grid>
