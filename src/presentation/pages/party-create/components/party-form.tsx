@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { Grid, TextField, Button, RadioGroup, Radio, FormControlLabel, FormLabel } from '@mui/material'
 
-const PartyForm: React.FC = () => {
+type props = {
+    handleParty: React.FC
+}
+const PartyForm: React.FC<props> = ({ handleParty }: props) => {
     const [form, setForm] = useState({ name: '', type: 'public', password: '' })
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setForm((_form) => ({ ..._form, [event.target.name]: event.target.value }))
