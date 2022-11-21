@@ -36,7 +36,7 @@ const PartyForm: React.FC<props> = ({ handleParty }: props) => {
                 </Button>
             </Grid>
             <Grid item xs={12} md={6}>
-                <Button fullWidth variant='contained' color='success'>
+                <Button onClick={handleParty} fullWidth variant='contained' color='success'>
                     Criar
                 </Button>
             </Grid>
