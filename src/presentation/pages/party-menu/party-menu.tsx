@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Paper, Grid, TextField, Button } from '@mui/material'
 
-const Party: React.FC = () => {
+const PartyMenu: React.FC = () => {
     return (
         <Box
             display="flex"
@@ -34,4 +34,4 @@ const Party: React.FC = () => {
     )
 }
 
-export default Party
+export default PartyMenu

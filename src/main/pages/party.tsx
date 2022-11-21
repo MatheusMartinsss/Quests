@@ -1,3 +1,3 @@
-import { Party } from '../../presentation/pages'
+import { PartyMenu } from '../../presentation/pages'
 
-export const MakeParty = () => <Party />
+export const MakeParty = () => <PartyMenu />
