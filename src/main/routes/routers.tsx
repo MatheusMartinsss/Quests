@@ -1,12 +1,13 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { MakeParty, MakePartyCreate } from '../pages/'
+import { MakePartyMenu, MakePartyCreate, MakeParty } from '../pages/'
 const Routers: React.FC = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<MakeParty />} />
+                <Route path='/' element={<MakePartyMenu />} />
                 <Route path='/criar' element={<MakePartyCreate />} />
+                <Route path='/sala/:id' element={<MakeParty/>} />
             </Routes>
         </BrowserRouter>
     )
