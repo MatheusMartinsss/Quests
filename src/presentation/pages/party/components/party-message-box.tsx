@@ -15,7 +15,8 @@ const PartyMessageBox: React.FC<props> = ({ handleMessage }: props) => {
             padding={2}
             display="flex"
             minHeight='50px'
-
+            minWidth='200px'
+            flexGrow='1'
         >
             <TextField
                 onKeyUp={(e) => {

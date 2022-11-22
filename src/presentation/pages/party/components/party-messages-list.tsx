@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box} from '@mui/material'
 import PartyMessage from './party-message'
-import PartyMessageBox from './party-message-box'
 type props = {
     data: any
 }
@@ -11,7 +10,8 @@ const PartyMessagesList: React.FC<props> = ({ data }: props) => {
             padding={2}
             display="flex"
             flexDirection='column'
-            overflow='scroll'
+            overflow='auto'
+            flexGrow='1'
             height='400px'
         >
             {data.map(({ id, message, name, event }: any) => (

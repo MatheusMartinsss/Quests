@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { Box, Paper } from '@mui/material'
+import { Box, Paper, Divider, Grid } from '@mui/material'
 import PartyMessagesList from './components/party-messages-list'
 import PartyMessageBox from './components/party-message-box'
-
+import PartyMembersList from './components/party-members-list'
 
 const Party: React.FC = () => {
 
@@ -22,6 +22,16 @@ const Party: React.FC = () => {
         message: 'Matheus saiu da sala...',
         event: true
     }])
+    let members = [{
+        name: 'Matheus',
+        score: 800
+    }, {
+        name: 'Usuario2',
+        score: 700,
+    }, {
+        name: 'Usuario3',
+        score: 600
+    }]
     const handleMessage = (message: string): void => {
         setMessages((_messages: any) => ([..._messages, { name: 'Matheus', id: messages.length + 1, event: false, message: message }]))
     }
@@ -30,19 +40,31 @@ const Party: React.FC = () => {
             component={Paper}
             padding={2}
             display="flex"
-            flexGrow='1'
-            flexDirection='column'
             margin='auto'
             minHeight='400px'
             minWidth='200px'
             maxWidth='1000px'
         >
-            <PartyMessagesList
-                data={messages}
-            />
-            <PartyMessageBox
-                handleMessage={handleMessage}
-            />
+            <Grid
+                container
+                spacing={1}
+            >
+                <Grid item xs={12} md={10} order={{ xs: 2, md: 1 }}>
+                    <PartyMessagesList
+                        data={messages}
+                    />
+                </Grid>
+                <Grid item xs={12} md={2} order={{ xs: 1, md: 2 }}>
+                    <PartyMembersList
+                        members={members}
+                    />
+                </Grid>
+                <Grid item xs={12} md={12} order={{ xs: 3, md: 4 }}>
+                    <PartyMessageBox
+                        handleMessage={handleMessage}
+                    />
+                </Grid>
+            </Grid>
         </Box>
     )
 }
