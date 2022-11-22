@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { Box, Paper, Divider, Grid } from '@mui/material'
-import PartyMessagesList from './components/party-messages-list'
-import PartyMessageBox from './components/party-message-box'
-import PartyMembersList from './components/party-members-list'
+import { Box, Paper, Grid } from '@mui/material'
+import { PartyMembersList, PartyMessageBox, PartyMessagesList } from './components/'
 
 const Party: React.FC = () => {
 
@@ -22,6 +20,7 @@ const Party: React.FC = () => {
         message: 'Matheus saiu da sala...',
         event: true
     }])
+
     let members = [{
         name: 'Matheus',
         score: 800
@@ -32,6 +31,7 @@ const Party: React.FC = () => {
         name: 'Usuario3',
         score: 600
     }]
+
     const handleMessage = (message: string): void => {
         setMessages((_messages: any) => ([..._messages, { name: 'Matheus', id: messages.length + 1, event: false, message: message }]))
     }
